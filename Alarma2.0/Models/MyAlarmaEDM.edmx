@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AlarmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alarms">
+          <Key>
+            <PropertyRef Name="idAlarma" />
+          </Key>
+          <Property Name="idAlarma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreAlarma" Type="varchar" MaxLength="50" />
+          <Property Name="Hora" Type="time" Precision="7" />
+          <Property Name="Lunes" Type="bit" />
+          <Property Name="Martes" Type="bit" />
+          <Property Name="Miercoles" Type="bit" />
+          <Property Name="Jueves" Type="bit" />
+          <Property Name="Viernes" Type="bit" />
+          <Property Name="Sabado" Type="bit" />
+          <Property Name="Domingo" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="AlarmModelStoreContainer">
+          <EntitySet Name="Alarms" EntityType="Self.Alarms" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AlarmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Alarm">
+          <Key>
+            <PropertyRef Name="idAlarma" />
+          </Key>
+          <Property Name="idAlarma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreAlarma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Hora" Type="Time" Precision="7" />
+          <Property Name="Lunes" Type="Boolean" />
+          <Property Name="Martes" Type="Boolean" />
+          <Property Name="Miercoles" Type="Boolean" />
+          <Property Name="Jueves" Type="Boolean" />
+          <Property Name="Viernes" Type="Boolean" />
+          <Property Name="Sabado" Type="Boolean" />
+          <Property Name="Domingo" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="AlarmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alarms" EntityType="Self.Alarm" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AlarmModelStoreContainer" CdmEntityContainer="AlarmEntities">
+          <EntitySetMapping Name="Alarms">
+            <EntityTypeMapping TypeName="AlarmModel.Alarm">
+              <MappingFragment StoreEntitySet="Alarms">
+                <ScalarProperty Name="idAlarma" ColumnName="idAlarma" />
+                <ScalarProperty Name="NombreAlarma" ColumnName="NombreAlarma" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Lunes" ColumnName="Lunes" />
+                <ScalarProperty Name="Martes" ColumnName="Martes" />
+                <ScalarProperty Name="Miercoles" ColumnName="Miercoles" />
+                <ScalarProperty Name="Jueves" ColumnName="Jueves" />
+                <ScalarProperty Name="Viernes" ColumnName="Viernes" />
+                <ScalarProperty Name="Sabado" ColumnName="Sabado" />
+                <ScalarProperty Name="Domingo" ColumnName="Domingo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

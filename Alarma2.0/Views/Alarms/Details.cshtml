@@ -1,0 +1,91 @@
+﻿@model Alarma2._0.Models.Alarm
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Alarmas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreAlarma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreAlarma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lunes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lunes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Martes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Martes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miercoles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miercoles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jueves)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jueves)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Viernes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Viernes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sabado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sabado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Domingo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Domingo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAlarma }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
